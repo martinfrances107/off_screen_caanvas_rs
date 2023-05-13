@@ -37,31 +37,24 @@ fn start() {
         .unwrap();
 
     // Draw the mouth.
-    let path_mouth = Path2d::new().unwrap();
-    path_mouth.move_to(110.0, 75.0);
-    path_mouth
+    path_face.move_to(110.0, 75.0);
+    path_face
         .arc(75.0, 75.0, 35.0, 0.0, f64::consts::PI)
         .unwrap();
 
     // Draw the left eye.
-    let path_l_eye = Path2d::new().unwrap();
-    path_l_eye.move_to(65.0, 65.0);
-    path_l_eye
+    path_face.move_to(65.0, 65.0);
+    path_face
         .arc(60.0, 65.0, 5.0, 0.0, f64::consts::PI * 2.0)
         .unwrap();
 
     // Draw the right eye.
-    let path_r_eye = Path2d::new().unwrap();
-    path_r_eye.move_to(95.0, 65.0);
-    path_r_eye
+    path_face.move_to(95.0, 65.0);
+    path_face
         .arc(90.0, 65.0, 5.0, 0.0, f64::consts::PI * 2.0)
         .unwrap();
 
-    path_face.add_path(&path_mouth);
-    path_face.add_path(&path_l_eye);
-    path_face.add_path(&path_r_eye);
     context.stroke_with_path(&path_face);
-    // context.stroke();
 
     let bitmap = off_canvas.transfer_to_image_bitmap().unwrap();
 

@@ -24,9 +24,3 @@ features = [
   'HtmlCanvasElement',
   'Window',
 ]
-
-[wasm32-unknown-unknown.web_sys]
-rustc__flags = "--cfg web_sys_unstable_apis"
-
-[build]
-rustflags = "--cfg web_sys_unstable_apis"
